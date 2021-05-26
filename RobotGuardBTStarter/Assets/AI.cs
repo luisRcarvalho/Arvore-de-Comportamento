@@ -127,6 +127,19 @@ public class AI : MonoBehaviour
     }
 
     [Task] 
+    public bool IsHealthLessThan(float health)
+    {
+        return this.health < health; //se a vida for menor que a vida estabelecida
+    }
+    [Task]
+    public bool Explode()
+    { 
+        Destroy(healthBar.gameObject); //destroi a barra de vida do inimigo
+        Destroy(this.gameObject); //destroi o inimigo
+        return true;
+    }
+
+    [Task] 
     bool Turn(float angle)
     { 
         var p = this.transform.position + Quaternion.AngleAxis(angle, Vector3.up) * this.transform.forward;
