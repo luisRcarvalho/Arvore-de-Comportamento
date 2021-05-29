@@ -2,9 +2,14 @@ tree("Root")
 	sequence
 			//random
 			random(5,1,1,1)
+			//vira 90 graus
 						Turn(90.0)
+			//vira -90
 						Turn(-90.0)
+			//vira -145 
 						Turn(145.0)
+			//vira -27
 						Turn(-27.0)
+			//olha para o alvo
 			LookAtTarget
 			WaitRandom(1.0,5.0)

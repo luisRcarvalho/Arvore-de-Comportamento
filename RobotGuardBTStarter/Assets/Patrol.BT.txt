@@ -1,6 +1,8 @@
 tree("Root")
 	sequence
+	//pega um ponto em X e Y de forma aleatoria
 		PickDestination(-100,-100)
+	// e se move para o ponto
 		MoveToDestination
 		PickDestination(-100, 100)
 		MoveToDestination

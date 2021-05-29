@@ -1,25 +1,38 @@
 tree("Root")
 			parallel
+			//verifica se esta em patrulha
 					repeat mute tree("Patrol")
+			//verifica se esta morto
 					repeat mute tree("Dead")
 tree("Patrol")
 			fallback
 					tree("Attack")
+					//chama o attack
 					while IsHealthLessThan(40.0)
+					//se a vida for menor que 40
 						fallback
+						//ele retorna pro tree wander
 								tree("Wander")
 tree("Attack")
 			while SeePlayer
+			//quando ve o player
 						sequence
+						//define ele como alvo
 								TargetPlayer
+						//olha para ele
 								LookAtTarget
+						//ataca
 								Fire
 tree("Dead")                                            
-			sequence                          
-					IsHealthLessThan(0.1)               
+			sequence                        
+			//se a vida for menor que o 0.1
+					IsHealthLessThan(0.1)     
+			//explode o boneco
 					Explode                             
 
 tree("Wander")
 			sequence
-    				PickRandomDestination               
+			//pega um destino aleatorio
+    				PickRandomDestination
+			//se move para ela
     				MoveToDestination                   

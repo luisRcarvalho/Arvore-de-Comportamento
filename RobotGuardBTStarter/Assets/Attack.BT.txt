@@ -1,6 +1,11 @@
 tree("Root")
+//quando ele ve o player(utiliza o metodo seeplayer)
 			while SeePlayer
+//em seguida
 					sequence
+//ele define o player
 							TargetPlayer
+//olha para ele
 							LookAtTarget
+// e ataca
 							Fire
